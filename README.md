@@ -37,3 +37,25 @@ This learning initiative is supported by the data community and learning resourc
 Databricks — https://www.databricks.com
 Codebasics — https://www.codebasics.io
 Indian Data Club — https://indiandataclub.com
+
+## Day 2 – Apache Spark Fundamentals 🚀
+
+Today I explored the fundamentals of Apache Spark using Databricks Community Edition.
+
+### What I learned:
+- Spark architecture (Driver, Executors, DAG)
+- Difference between DataFrames and RDDs
+- Lazy evaluation in Spark
+- Using Databricks magic commands (%python, %sql, %fs)
+
+### What I built:
+- Loaded an e-commerce CSV dataset into Spark
+- Performed select, filter, groupBy, and orderBy operations
+- Aggregated revenue by product category
+- Exported processed data back to storage
+
+Apache Spark makes large-scale data processing both powerful and intuitive when using DataFrames.
+
+Thanks to the learning initiative by @Databricks, @Codebasics, and @indiandataclub 🙌  
+#DatabricksWithIDC
+
