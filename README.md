@@ -115,3 +115,66 @@ Thanks to the learning initiative by
 @Databricks @Codebasics @indiandataclub  
 
 #DatabricksWithIDC
+
+## Day 4 – Delta Lake & Data Reliability (Unity Catalog) 🚀  
+📅 12/01/26
+
+Today I worked on **Delta Lake fundamentals with Unity Catalog**, focusing on how Databricks ensures data reliability, schema enforcement, and safe data ingestion in production environments.
+
+This day was especially insightful because it exposed **real-world constraints and errors** that data engineers face while working with Delta + UC.
+
+---
+
+### 🔍 What I learned:
+
+#### 1️⃣ CSV → Delta Conversion
+- Converted raw e-commerce CSV data into **Delta format**
+- Understood why Delta is preferred over CSV/Parquet for analytics pipelines
+
+#### 2️⃣ Delta Tables with Unity Catalog
+- Created **managed Delta tables** in Unity Catalog
+- Learned why `dbfs:/` and `file:/` paths are **not supported in UC**
+- Used **Volumes and managed tables** as UC-compliant storage options
+
+#### 3️⃣ Schema Enforcement
+- Verified that Delta **rejects invalid schema writes**
+- Observed how Delta prevents bad data ingestion at write time
+- Understood the difference between schema inference vs schema enforcement
+
+#### 4️⃣ Handling Duplicate Inserts
+- Detected duplicate records using business keys
+- Implemented de-duplication strategies
+- Used **MERGE INTO** for idempotent writes and safe upserts
+
+#### 5️⃣ Practical Debugging (Real Engineering Lessons)
+- Resolved:
+  - Missing filesystem scheme errors
+  - Unity Catalog path restrictions
+  - `_c0`, `_c1` column issues caused by missing CSV headers
+- Learned why proper schema definition is critical before using MERGE
+
+---
+
+### 🧠 Key Takeaways:
+- Delta Lake adds **ACID guarantees** to data lakes
+- Unity Catalog enforces **strict governance and storage rules**
+- Managed tables are often safer than external locations
+- MERGE operations require **clean schemas with correct column names**
+- Many Delta errors are not bugs, but **design safeguards**
+
+---
+
+### 🔧 Tech Stack:
+- Apache Spark (PySpark)
+- Delta Lake
+- Databricks Community Edition
+- Unity Catalog
+- Kaggle E-commerce Behavior Dataset
+
+---
+
+Thanks to the learning initiative by  
+@Databricks @Codebasics @indiandataclub  
+
+#DatabricksWithIDC
+
