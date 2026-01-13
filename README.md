@@ -178,3 +178,36 @@ Thanks to the learning initiative by
 
 #DatabricksWithIDC
 
+Day 5 – Delta Lake Advanced Operations (Databricks)
+Today’s focus was on managing incremental data, performance optimization, and storage hygiene using Delta Lake. These are critical concepts for building production-grade Lakehouse pipelines.
+✅ What I Learned & Implemented
+1️⃣ Incremental Data Handling with MERGE
+Implemented upserts using Delta Lake MERGE
+Efficiently handled new and updated records
+Prevented duplicate data during incremental loads
+Key use case: CDC pipelines and Bronze → Silver transformations
+2️⃣ Querying Historical Data (Time Travel)
+Queried previous versions of Delta tables
+Used version-based and timestamp-based queries
+Understood how Delta maintains transactional history
+Useful for auditing, debugging, and rollback scenarios
+3️⃣ Performance Optimization with OPTIMIZE
+Compacted small files into larger ones
+Used Z-Ordering on frequently filtered columns
+Improved query latency and scan efficiency
+Crucial for large analytical tables
+4️⃣ Storage Cleanup with VACUUM
+Removed obsolete files created by updates and merges
+Learned retention-period best practices
+Understood trade-offs between cleanup and time travel
+🧠 Key Takeaway
+Delta Lake is not just about storing data — it enables reliable incremental processing, auditability, high performance, and efficient storage management, all within the Lakehouse architecture.
+🛠️ Tools & Concepts
+Databricks Community Edition
+Delta Lake
+MERGE (Upserts)
+Time Travel
+OPTIMIZE & Z-ORDER
+VACUUM
+📌 Building strong foundations for scalable data engineering and analytics pipelines.
+#Databricks #DeltaLake #Lakehouse #DataEngineering #BigData #LearningInPublic
