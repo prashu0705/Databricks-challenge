@@ -211,3 +211,39 @@ OPTIMIZE & Z-ORDER
 VACUUM
 📌 Building strong foundations for scalable data engineering and analytics pipelines.
 #Databricks #DeltaLake #Lakehouse #DataEngineering #BigData #LearningInPublic
+📅 Day 6 – Medallion Architecture (Bronze → Silver → Gold)
+📘 What I Learned
+Today’s focus was on understanding and implementing the Medallion Architecture, a core design pattern in modern data lakehouse systems.
+Bronze Layer (Raw)
+Stores raw, immutable data exactly as received from source systems.
+Silver Layer (Cleaned)
+Applies data cleaning, validation, deduplication, and schema enforcement.
+Gold Layer (Aggregated)
+Contains business-ready datasets optimized for analytics and reporting.
+This layered approach improves data quality, scalability, auditability, and performance, while enabling incremental and reliable data pipelines.
+🛠️ Hands-on Tasks Completed
+Designed a 3-layer Lakehouse architecture
+Clearly defined responsibilities for Bronze, Silver, and Gold layers
+Followed separation-of-concerns best practices
+Built Bronze Layer – Raw Ingestion
+Ingested raw data as-is
+Preserved original schema and timestamps
+Ensured append-only, immutable storage
+Built Silver Layer – Cleaning & Validation
+Removed duplicates and invalid records
+Standardized data formats
+Enforced schema consistency
+Built Gold Layer – Business Aggregates
+Created analytical aggregates for downstream use
+Optimized tables for reporting and BI queries
+💡 Key Takeaways
+Medallion architecture simplifies pipeline maintenance
+Incremental processing reduces compute cost and improves efficiency
+Clear data layering makes debugging and governance easier
+🚀 Tech Stack
+Apache Spark
+Delta Lake
+Databricks Community Edition
+📌 Continuing to document my Databricks & Lakehouse learning journey step by step.
+Looking forward to implementing more advanced incremental and optimization patterns next.
+#Databricks #Lakehouse #DeltaLake #DataEngineering #MedallionArchitecture #LearningInPublic
