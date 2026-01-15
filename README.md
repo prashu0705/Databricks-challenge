@@ -247,3 +247,35 @@ Databricks Community Edition
 📌 Continuing to document my Databricks & Lakehouse learning journey step by step.
 Looking forward to implementing more advanced incremental and optimization patterns next.
 #Databricks #Lakehouse #DeltaLake #DataEngineering #MedallionArchitecture #LearningInPublic
+
+DAY 7 (15/01/26) — Workflows & Job Orchestration (Databricks)
+Today’s focus was on orchestrating end-to-end data pipelines using Databricks Jobs and Workflows, moving from standalone notebooks to production-grade automated pipelines.
+📘 What I Learned
+Difference between Databricks Notebooks vs Jobs
+Designing multi-task workflows
+Using parameters & widgets for dynamic execution
+Setting up task dependencies
+Basics of error handling & retries
+Scheduling pipelines for automated runs
+🛠️ Hands-on Tasks Completed
+Added parameter widgets to notebooks for reusable execution
+Built a multi-task Databricks Job following the Medallion Architecture
+Bronze → Silver → Gold
+Configured task dependencies to ensure correct execution order
+Scheduled the workflow for automatic execution
+Validated successful orchestration and task-level status monitoring
+🏗️ Architecture Implemented
+Bronze (Raw Ingestion)
+        ↓
+Silver (Cleaning & Validation)
+        ↓
+Gold (Business Aggregations)
+Each layer runs as an independent task, orchestrated using Databricks Workflows.
+🚀 Key Takeaway
+Databricks Workflows enable scalable, fault-tolerant, and automated data pipelines, making them suitable for real-world production use cases beyond exploratory notebooks.
+🔗 Repository
+📌 Code and workflow configurations are available in this repository.
+🔖 Tags
+#Databricks #DataEngineering #Workflows #JobOrchestration
+#MedallionArchitecture #BigData #Lakehouse
+
