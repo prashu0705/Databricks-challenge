@@ -279,3 +279,102 @@ Databricks Workflows enable scalable, fault-tolerant, and automated data pipelin
 #Databricks #DataEngineering #Workflows #JobOrchestration
 #MedallionArchitecture #BigData #Lakehouse
 
+## 📅 Day 8 – Data Governance & Catalog Management (Databricks 14 Days AI Challenge)
+
+### 🔍 What I Learned
+
+* **Catalog → Schema → Table hierarchy** and how Databricks logically organizes data assets
+* Basics of **data governance** and why access control is critical in analytics platforms
+* Conceptual understanding of **GRANT / REVOKE** permissions
+* Difference between **managed tables** and **external tables**
+* How **views** can be used to expose controlled, business-ready data
+* Importance of **data lineage** in understanding data flow across layers
+
+---
+
+### 🛠️ What I Implemented
+
+#### 1️⃣ Catalog & Schema Structure
+
+In Databricks Community Edition, I used the default catalog (`workspace`) and created a dedicated schema for the project:
+
+```sql
+CREATE SCHEMA IF NOT EXISTS workspace.ecommerce;
+```
+
+This schema represents a logical boundary for all e-commerce analytics tables.
+
+---
+
+#### 2️⃣ Registering Delta Tables
+
+I registered **managed Delta tables** created from the Medallion Architecture:
+
+* `bronze_events` – raw ingested data
+* `silver_events` – cleaned and deduplicated data
+* `gold_product_metrics` – aggregated business metrics
+
+These tables are managed by Databricks, with storage and metadata handled automatically.
+
+```sql
+SHOW TABLES IN workspace.ecommerce;
+```
+
+---
+
+#### 3️⃣ Access Control (Conceptual)
+
+While Databricks Community Edition does not support `GRANT` / `REVOKE`, I designed access logically:
+
+* **Data Engineers** → Bronze & Silver tables
+* **Analysts / Business Users** → Gold tables or curated views only
+
+This mirrors real-world governance practices used with Unity Catalog in production environments.
+
+---
+
+#### 4️⃣ Controlled Access Using Views
+
+To expose only analytics-ready data, I created a curated **Gold-layer view**:
+
+```sql
+CREATE VIEW workspace.ecommerce.top_products AS
+SELECT
+  product_id,
+  total_purchases,
+  total_revenue
+FROM workspace.ecommerce.gold_product_metrics
+WHERE total_purchases > 10
+ORDER BY total_revenue DESC;
+```
+
+This ensures:
+
+* No access to raw or sensitive data
+* Consistent business logic
+* Simplified querying for analysts
+
+---
+
+### 🧠 Key Takeaways
+
+* Governance is as important as data processing in production systems
+* Views are a powerful way to enforce **controlled access**
+* Managed tables simplify storage and lifecycle management
+* Unity Catalog concepts can be **understood and applied logically** even in Community Edition
+
+---
+
+### ✅ Outcome
+
+* Implemented catalog & schema structure
+* Registered Delta tables
+* Designed access control strategy
+* Created governed views for analytics
+
+📌 **Day 8 complete — ready for production-grade data governance concepts.**
+
+---
+
+#Databricks #DataGovernance #UnityCatalog #DeltaLake #MedallionArchitecture #DatabricksWithIDC
+
