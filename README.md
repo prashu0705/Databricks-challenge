@@ -378,3 +378,69 @@ This ensures:
 
 #Databricks #DataGovernance #UnityCatalog #DeltaLake #MedallionArchitecture #DatabricksWithIDC
 
+📅 Day 9 – SQL Analytics & Dashboards
+Databricks 14 Days AI Challenge
+🔍 What I Learned
+Role of SQL Warehouses in Databricks for analytics workloads
+Writing complex analytical SQL queries on Delta tables
+Building business dashboards from aggregated metrics
+Using filters and scheduled refresh concepts
+How SQL analytics sits on top of the Gold layer in Lakehouse
+🛠️ Tasks Completed
+Since Databricks Community Edition does not support the SQL Warehouse UI, I implemented all analytics directly using Spark SQL on Gold Delta tables to simulate warehouse-driven dashboards.
+1️⃣ Analytical SQL Queries
+📈 Revenue Trend Over Time
+SELECT 
+  DATE(event_time) AS purchase_date,
+  SUM(price) AS daily_revenue
+FROM workspace.ecommerce.silver_events
+WHERE event_type = 'purchase'
+GROUP BY DATE(event_time)
+ORDER BY purchase_date;
+🛒 Funnel Analysis (View → Cart → Purchase)
+SELECT 
+  event_type,
+  COUNT(*) AS total_events
+FROM workspace.ecommerce.silver_events
+GROUP BY event_type;
+🏆 Top Products by Revenue
+SELECT 
+  product_id,
+  SUM(price) AS revenue,
+  COUNT(*) AS purchases
+FROM workspace.ecommerce.silver_events
+WHERE event_type = 'purchase'
+GROUP BY product_id
+ORDER BY revenue DESC
+LIMIT 10;
+2️⃣ Dashboard Simulation
+Built visual insights (in notebook) representing:
+Revenue trend chart
+Funnel conversion distribution
+Top revenue-driving products
+These mirror typical BI dashboards powered by Databricks SQL Warehouses.
+3️⃣ Filters Applied
+Simulated dashboard filters via SQL:
+-- Example: Electronics category purchases only
+SELECT 
+  product_id,
+  SUM(price) AS revenue
+FROM workspace.ecommerce.silver_events
+WHERE event_type = 'purchase'
+AND category_code LIKE 'electronics%'
+GROUP BY product_id
+ORDER BY revenue DESC;
+4️⃣ Scheduled Refresh (Conceptual)
+In production, dashboards would refresh automatically via SQL Warehouse scheduling.
+Here, refresh was simulated by re-running queries on updated Delta tables.
+🧠 Key Takeaways
+SQL sits on top of curated Gold/Silver Delta tables
+Funnel and revenue analysis are core e-commerce metrics
+Dashboards translate raw data into business insights
+Databricks SQL Warehouse accelerates analytical workloads (conceptually applied)
+✅ Outcome
+✔ Wrote complex analytical SQL queries
+✔ Built revenue, funnel, and top-product analyses
+✔ Applied filters to simulate dashboard interactivity
+✔ Understood SQL Warehouse & refresh workflow
+#Databricks #SQLAnalytics #Lakehouse #DeltaLake #DatabricksWithIDC
