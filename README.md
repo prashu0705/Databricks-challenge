@@ -444,3 +444,18 @@ Databricks SQL Warehouse accelerates analytical workloads (conceptually applied)
 ✔ Applied filters to simulate dashboard interactivity
 ✔ Understood SQL Warehouse & refresh workflow
 #Databricks #SQLAnalytics #Lakehouse #DeltaLake #DatabricksWithIDC
+
+Databricks Learning Journey – Day 10: Performance Optimization ⚡
+Today I focused on optimizing data performance in Databricks to make queries faster and more efficient.
+🔍 What I Learned:
+Understanding Query Execution Plans
+Partitioning strategies for large tables
+Using OPTIMIZE and ZORDER for faster reads
+Leveraging caching to reduce recomputation
+🛠️ Hands-on Tasks:
+Analyzed execution plans to identify bottlenecks
+Partitioned large tables based on query patterns
+Applied ZORDER to improve data skipping
+Benchmarked performance before vs after optimization
+Performance tuning is critical when working with large-scale data, and Databricks provides powerful tools to achieve significant speedups.
+#Databricks #BigData #PerformanceOptimization #DataEngineering #SQLAnalytics
